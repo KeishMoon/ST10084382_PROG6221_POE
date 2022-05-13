@@ -1,0 +1,7 @@
+C:\Users\lab_services_student\source\repos\BudgetPlanner\BudgetPlanner\obj\Debug\BudgetPlanner.csproj.AssemblyReference.cache
+C:\Users\lab_services_student\source\repos\BudgetPlanner\BudgetPlanner\obj\Debug\BudgetPlanner.csproj.CoreCompileInputs.cache
+C:\Users\lab_services_student\source\repos\BudgetPlanner\BudgetPlanner\bin\Debug\BudgetPlanner.exe.config
+C:\Users\lab_services_student\source\repos\BudgetPlanner\BudgetPlanner\bin\Debug\BudgetPlanner.exe
+C:\Users\lab_services_student\source\repos\BudgetPlanner\BudgetPlanner\bin\Debug\BudgetPlanner.pdb
+C:\Users\lab_services_student\source\repos\BudgetPlanner\BudgetPlanner\obj\Debug\BudgetPlanner.exe
+C:\Users\lab_services_student\source\repos\BudgetPlanner\BudgetPlanner\obj\Debug\BudgetPlanner.pdb
