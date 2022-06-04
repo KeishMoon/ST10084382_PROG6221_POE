@@ -10,13 +10,19 @@ namespace BudgetPlanner
     // HomeLoan extends the abstract Expense class
     public class HomeLoan : Expense
     {
-        // Method to get information about the user's home loan
-        public void getHomeLoanInfo()
+        // Advanced feature: Tuple
+        // Create Tuple using Tuple constructor
+        // Tuple to store notification phrases
+        public static Tuple<string, string> Notification_Tuple = new Tuple<string, string>("Error!", "Warning!");
+
+        // Method to override the abstract method and get information about the user's home loan
+        public override void getUserInput()
         {
             // Change the text and background colours
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkGray;
 
+            // Get information about the user's home loan
             Console.Write("Enter the purchase price of your property: R");
             propertyPurchasePrice = Console.ReadLine();
 
@@ -83,7 +89,7 @@ namespace BudgetPlanner
                 Console.ForegroundColor = ConsoleColor.White;
 
                 // Error Message
-                Console.WriteLine("Error!");
+                Console.WriteLine(Notification_Tuple.Item1);
 
                 // Change the text and background colours
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -125,7 +131,7 @@ namespace BudgetPlanner
                 Console.ForegroundColor = ConsoleColor.White;
 
                 // Error Message
-                Console.WriteLine("Error!");
+                Console.WriteLine(Notification_Tuple.Item1);
 
                 // Change the text and background colours
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -175,7 +181,7 @@ namespace BudgetPlanner
                 Console.ForegroundColor = ConsoleColor.White;
 
                 // Error Message
-                Console.WriteLine("Error!");
+                Console.WriteLine(Notification_Tuple.Item1);
 
                 // Change the text and background colours
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -225,7 +231,7 @@ namespace BudgetPlanner
                 Console.ForegroundColor = ConsoleColor.White;
 
                 // Error Message
-                Console.WriteLine("Error!");
+                Console.WriteLine(Notification_Tuple.Item1);
 
                 // Change the text and background colours
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -260,7 +266,7 @@ namespace BudgetPlanner
                     Console.ForegroundColor = ConsoleColor.White;
 
                     // Error Message
-                    Console.WriteLine("Error!");
+                    Console.WriteLine(Notification_Tuple.Item1);
 
                     // Change the text and background colours
                     Console.BackgroundColor = ConsoleColor.Black;
@@ -288,7 +294,7 @@ namespace BudgetPlanner
                         Console.ForegroundColor = ConsoleColor.White;
 
                         // Error Message
-                        Console.WriteLine("Error!");
+                        Console.WriteLine(Notification_Tuple.Item1);
 
                         // Change the text and background colours
                         Console.BackgroundColor = ConsoleColor.Black;
@@ -337,7 +343,7 @@ namespace BudgetPlanner
             double totalLoanAmt;
 
             // method call
-            getHomeLoanInfo();
+            getUserInput();
 
             // calculate the property Purchase Price without the deposit
             double propertyPriceMinusDeposit = propertyPurchasePriceDouble - totalDepositAmtDouble;
@@ -348,6 +354,7 @@ namespace BudgetPlanner
             // formula: 𝐴=𝑃(1 +𝑖𝑛)
             totalLoanAmt = propertyPriceMinusDeposit * (1 + ((interestRatePercentageDouble / 100) * loanYearsRepayment));
 
+            // Calculate the monthly home loan repayment amount
             double mthlyHomeLoanRepayment = Math.Round((totalLoanAmt / numOfMonthsDouble), 2);
 
             // Leave a line
@@ -361,7 +368,7 @@ namespace BudgetPlanner
                 Console.ForegroundColor = ConsoleColor.White;
 
                 // Warning Message
-                Console.WriteLine("Warning!");
+                Console.WriteLine(Notification_Tuple.Item2);
 
                 // Change the text and background colours
                 Console.BackgroundColor = ConsoleColor.DarkRed;

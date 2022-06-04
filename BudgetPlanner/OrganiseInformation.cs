@@ -35,7 +35,7 @@ namespace BudgetPlanner
                 ui.getUserInput();
 
                 // Create an object of the DisplauInformation class
-                DisplauInformation di = new DisplauInformation();
+                DisplayInformation di = new DisplayInformation();
 
                 // Method call
                 di.displayInfo();
@@ -60,6 +60,7 @@ namespace BudgetPlanner
 
                 // Assigns the users choice on whether or not the want to run the program again to the boolean userContChoice
                 userContChoice = rerunApp();
+
                 // If userContChoice, then the program executes again
             } while (userContChoice == true);
 
@@ -69,6 +70,7 @@ namespace BudgetPlanner
         // Method to clear the program if the user wishes to run the program again
         public bool rerunApp()
         {
+            // Boolean to store whether or not the program will rerun or not
             bool rerunChoice;
 
             // Pauses the screen for 1 second
@@ -94,7 +96,8 @@ namespace BudgetPlanner
                 mthlyTax = null;
                 expensesType.Clear();
                 expensesAmount.Clear();
-                arrayListSize = 0;
+                expensesDoubleAmount.Clear();
+                expensesListSize = 0;
                 mthlyHousingPayment = 0;
                 propertyPurchasePrice = null;
                 totalDepositAmt = null;
@@ -105,27 +108,49 @@ namespace BudgetPlanner
                 interestRatePercentageDouble = 0;
                 numOfMonthsDouble = 0;
                 totalExpenses = 0;
-                moneyLeftOverPerMonth = 0;
+                netIncome = 0;
+                carPurchaseChoice = false;
+                carModel = null;
+                carMake = null;
+                carTotalDeposit = null;
+                carPurchasePrice = null;
+                carInterestRatePercentage = null;
+                estimatedInsurancePremium = null;
+                totalMthlyCarCost = 0;
 
+                // Clear teh console window
                 Console.Clear();
 
-
-
+                // If the user wants to rerun the program, then assign the rerunChoice boolean the value of true
                 rerunChoice = true;
 
             }
             else
             {
+                // If the user does not want to rerun the program, then assign the rerunChoice boolean the value of flase
                 rerunChoice = false;
-                // Housekeeping to end the program
+
+                // Leave a line
+                Console.WriteLine();
+
+                // Change the text and background colours
                 Console.BackgroundColor = ConsoleColor.DarkGray;
                 Console.ForegroundColor = ConsoleColor.Black;
+                
+                // Housekeeping to end the program
                 Console.WriteLine("**************");
                 Console.WriteLine("End of Program");
                 Console.WriteLine("**************");
             }
 
+            // return the boolean value of true or false, based on the user's choice
             return rerunChoice;
+
+        }
+
+        // Method to override the abstract method 
+        public override void getUserInput()
+        {
 
         }
     }

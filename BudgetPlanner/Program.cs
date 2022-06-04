@@ -21,6 +21,6 @@ namespace BudgetPlanner
             Console.ReadLine();
         }
 
-        
+
     }
 }

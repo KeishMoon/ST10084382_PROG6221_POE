@@ -75,5 +75,11 @@ namespace BudgetPlanner
 
             return mthlyHousingPayment;
         }
+
+        // Method to override the abstract method
+        public override void getUserInput()
+        {
+
+        }
     }
 }

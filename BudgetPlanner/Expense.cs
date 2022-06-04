@@ -14,13 +14,18 @@ namespace BudgetPlanner
         public static string grossMonthlyIncome { get; set; }
         public static string mthlyTax { get; set; }
 
-        // Arraylist to store the expenses categories
-        public static ArrayList expensesType = new ArrayList();
+        // Using a generic collection to store the expenses
+        // List <T> to store the expenses categories
+        public static List<string> expensesType = new List<string>();
 
-        // Arraylist to store the expenses amounts
-        public static ArrayList expensesAmount = new ArrayList();
+        // List <T>  to store the expenses amounts
+        public static List<string> expensesAmount = new List<string>();
 
-        public static int arrayListSize { get; set; }
+        // List <T>  to store the final expenses amounts
+        public static List<double> expensesDoubleAmount = new List<double>();
+
+        // Stores the number of expenses that the user has
+        public static int expensesListSize { get; set; }
 
         // Getters and Setters related to the user's living arangement 
         public static double mthlyHousingPayment { get; set; }
@@ -33,12 +38,25 @@ namespace BudgetPlanner
         public static double interestRatePercentageDouble { get; set; }
         public static double numOfMonthsDouble { get; set; }
 
-        // Getter and Setter to save the available money per month once the deductions have been made
-        public double totalExpenses { get; set; }
-        public double moneyLeftOverPerMonth { get; set; }
+        // Getters and Setters to save the available money per month once the deductions have been made
+        public static double totalExpenses { get; set; }
+        public static double totalExpensePlusLoans { get; set; }
+        public static double netIncome { get; set; }
 
         // Getters and Setters to determine if the user would like to rerun the application
         public static string userRunAgin { get; set; }
 
+        // Getters and Setters related to the user's vehicle choice
+        public static bool carPurchaseChoice = false;
+        public static string carModel { get; set; }
+        public static string carMake { get; set; }
+        public static string carTotalDeposit { get; set; }
+        public static string carPurchasePrice { get; set; }
+        public static string carInterestRatePercentage { get; set; }
+        public static string estimatedInsurancePremium { get; set; }
+        public static double totalMthlyCarCost { get; set; }
+
+        // Abstract Method
+        public abstract void getUserInput();
     }
 }
